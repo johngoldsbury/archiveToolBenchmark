@@ -27,19 +27,19 @@ public class TikaBench {
 		File someFile = null;
 		System.out.println("Opening InputStream");
 		if (file.isDirectory()) {
-//			System.out.println("A directory");
+			// System.out.println("A directory");
 			Iterator<File> iter = FileUtils.iterateFiles(file, null, true);
 			while (iter.hasNext()) {
-				//parser = new AutoDetectParser();
+				// parser = new AutoDetectParser();
 				metadata = new Metadata();
-//				handler = new BodyContentHandler();
+				// handler = new BodyContentHandler();
 				someFile = iter.next();
-//				System.out.println(someFile.getAbsolutePath());
+				// System.out.println(someFile.getAbsolutePath());
 				if (!someFile.isDirectory()) {
 
 					input = new FileInputStream(someFile);
 					parser.parse(input, handler, metadata);
-					System.out.print(someFile.getAbsolutePath()+" - ");
+					System.out.print(someFile.getAbsolutePath() + " - ");
 					for (String str : metadata.names()) {
 						if (!str.contains("Unknown")) {
 							System.out.print("## ");
@@ -57,16 +57,14 @@ public class TikaBench {
 				}
 
 			}
-		}
-		else{
+		} else {
 			System.out.println("Just one file");
 			input = new FileInputStream(file);
 			parser.parse(input, handler, metadata);
 			for (String str : metadata.names()) {
 				if (!str.contains("Unknown")) {
 					System.out.print("## ");
-					System.out.print(str + ": " + metadata.get(str)
-							+ " ");
+					System.out.print(str + ": " + metadata.get(str) + " ");
 				}
 
 			}

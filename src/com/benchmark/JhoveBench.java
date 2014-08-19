@@ -1,19 +1,34 @@
 package com.benchmark;
 
-import java.util.ArrayList;
-import java.util.List;
+/**********************************************************************
+ * Jhove - JSTOR/Harvard Object Validation Environment
+ * Copyright 2004-2007 by the President and Fellows of Harvard College
+ *
+ * This program is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU Lesser General Public License as published by
+ * the Free Software Foundation; either version 2 of the License, or (at
+ * your option) any later version.
+ * 
+ * This program is distributed in the hope that it will be useful, but
+ * WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ * Lesser General Public License for more details.
+ * 
+ * You should have received a copy of the GNU Lesser General Public License
+ * along with this program; if not, write to the Free Software
+ * Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307
+ * USA
+ **********************************************************************/
 
 import edu.harvard.hul.ois.jhove.*;
+//import java.io.*;
+import java.util.*;
 
 public class JhoveBench {
+	/******************************************************************
+	 * PRIVATE CLASS FIELDS.
+	 ******************************************************************/
 
-	public void parseJhove(String path) throws JhoveException {
-		JhoveBase je = new JhoveBase();
-		System.out.println(je.getModuleList());
-		
-	}
-	/**	FROM JHOVE.java	*/
-	
 	/** Application name. */
 	private static final String NAME = "Jhove";
 
@@ -30,11 +45,16 @@ public class JhoveBench {
 			+ "[-m module] [-h handler] [-e encoding] [-H handler] [-o output] "
 			+ "[-x saxclass] [-t tempdir] [-b bufsize] [-l loglevel] [[-krs] "
 			+ "dir-file-or-uri [...]]";
+
 	/** Copyright information. */
 	private static final String RIGHTS = "Derived from software Copyright 2004-2011 "
 			+ "by the President and Fellows of Harvard College. "
 			+ "Version 1.7 and higher independently released. "
 			+ "Released under the GNU Lesser General Public License.";
+
+	/******************************************************************
+	 * MAIN ENTRY POINT.
+	 ******************************************************************/
 
 	public static void main(String[] args) {
 		RELEASE = JhoveBase._release; // possibly safer than final static init
@@ -258,4 +278,5 @@ public class JhoveBench {
 			System.exit(-1);
 		}
 	}
+
 }
