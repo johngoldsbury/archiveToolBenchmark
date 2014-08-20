@@ -272,6 +272,7 @@ public class JhoveBench {
 			je.setChecksumFlag(checksum);
 			je.setShowRawFlag(showRaw);
 			je.setSignatureFlag(signature);
+			
 			je.dispatch(app, module, about, handler, outputFile, dirFileOrUri);
 		} catch (Exception e) {
 			e.printStackTrace(System.err);

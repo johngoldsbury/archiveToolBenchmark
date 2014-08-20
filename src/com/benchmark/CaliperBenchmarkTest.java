@@ -30,7 +30,7 @@ public final class CaliperBenchmarkTest {
 	public void jhove(){
 		String[] testThing = new String[] { "-c", "conf/jhove.conf", "-s",
 				"/home/goldsbjohn/govdocs" };
-		 JhoveBench.main(testThing);
+		 
 	}
 	@Macrobenchmark
 	public void droid() throws Exception{
