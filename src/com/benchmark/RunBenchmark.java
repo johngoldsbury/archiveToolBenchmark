@@ -27,9 +27,6 @@ public class RunBenchmark {
 		CodeControl control = new CodeControl();
 		try {
 			control.disableSystemExit();
-			// invoke the methods and other classes that are not allowed to call
-			// System.exit.
-			// Object ret = invokeExecute("runTools", runWith, parms);
 			runTools(args);
 
 		} finally {
@@ -43,8 +40,7 @@ public class RunBenchmark {
 	public static void runTools(String[] args) throws Exception {
 		String[] testThing = {};
 		String fileName = "";
-		TikaBench tika = new TikaBench();
-
+		
 		if (args.length > 0) {
 			fileName = new File(args[0]).getAbsolutePath();
 			System.out.println(fileName);
@@ -53,14 +49,14 @@ public class RunBenchmark {
 			System.exit(0);
 		}
 
-		// DroidCommandLine.main(testThing);
-		 TikaBench.parseTika(fileName);
+//		 DroidCLI.main(testThing);
+//		 TikaBench.parseTika(fileName);
 
 		
 
 		testThing = new String[] { "-R", "-Nx", "csv", "-Nr", fileName, "-Ns",
 				"/home/goldsbjohn/.droid6/signature_files/DROID_SignatureFile_V77.xml" };
-		// com.benchmark.DroidCommandLine.main(testThing);
+		// DroidCLI.main(testThing);
 		// Class clazz = Class.forName("java.lang.ApplicationShutdownHooks");
 		// Field field = clazz.getDeclaredField("hooks");
 		// field.setAccessible(true);
@@ -78,7 +74,7 @@ public class RunBenchmark {
 
 		// testThing = new String[] { "-c", "conf/jhove.conf", "-s",
 		// fileName,"-o","/home/goldsbjohn/test.txt" };
-		// JhoveBench.main(testThing);
+//		 JhoveCLI.main(testThing);
 
 //		testThing = new String[] {
 //				"-R",
@@ -90,11 +86,11 @@ public class RunBenchmark {
 		// {"-R","-a","/home/goldsbjohn/govdocs/","-p","/home/goldsbjohn/result1.droid"};//"Result",
 		// "-t", "DROID Report XML", "-e",
 		// "/home/goldsbjohn/govdocs/result1Report.xml"};
-//		com.benchmark.DroidCommandLine.main(testThing);
+//		DroidCLI.main(testThing);
 		System.out.println("Done");
 		 testThing = new String[] { "-c", "conf/jhove.conf", "-s",
 		 fileName,"-o","/home/goldsbjohn/test2.txt" };
-		 JhoveBench.main(testThing);
+		 JhoveCLI.main(testThing);
 		 TikaCLIBench.parseTikaCLI(fileName);
 		 
 
