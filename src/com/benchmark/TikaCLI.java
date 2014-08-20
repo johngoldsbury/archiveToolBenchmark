@@ -99,12 +99,12 @@ import org.apache.tika.io.FilenameUtils;
 public class TikaCLI {
     private File extractDir = new File(".");
 
-    private static final Log logger = LogFactory.getLog(TikaCLI.class);
+//    private static final Log logger = LogFactory.getLog(TikaCLI.class);
 
     public static void main(String[] args) throws Exception {
-        BasicConfigurator.configure(
-                new WriterAppender(new SimpleLayout(), System.err));
-        Logger.getRootLogger().setLevel(Level.INFO);
+//        BasicConfigurator.configure(
+//                new WriterAppender(new SimpleLayout(), System.err));
+//        Logger.getRootLogger().setLevel(Level.INFO);
 
         TikaCLI cli = new TikaCLI();
         if (args.length > 0) {
@@ -753,7 +753,7 @@ public class TikaCLI {
                     e.getMessage()
                 );
                 System.err.println(msg);
-                logger.warn(msg, e);
+//                logger.warn(msg, e);
             } finally {
                 if (os != null) {
                     os.close();

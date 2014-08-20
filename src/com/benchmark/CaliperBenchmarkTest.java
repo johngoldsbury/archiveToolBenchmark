@@ -17,33 +17,43 @@ public final class CaliperBenchmarkTest {
 	// // -Dexec.args="com.benchmark.CaliperBenchmarkTest"
 	// }
 	
+	@Macrobenchmark
+	public void tika_CLI() throws Exception{
+		TikaCLIBench.parseTikaCLI("/home/goldsbjohn/govdocs/");
+	}
+	
 
 	 @Macrobenchmark
 	 public void tika() throws Exception {
 	
-	 TikaBench tika = new TikaBench();
-	 tika.parseTika("/home/goldsbjohn/govdocs");
+	 TikaBench.parseTika("/home/goldsbjohn/govdocs/");
 	
 	 }
-	 @Macrobenchmark
-	 public void jhoveS(){
-	 String[] testThing = new String[] { "-c", "conf/jhove.conf", "-s",
-	 "/home/goldsbjohn/govdocs","-o", "/home/goldsbjohn/test1.txt" };
-	 JhoveBench.main(testThing);
-	 }
-	 @Macrobenchmark
-	 public void jhoveK(){
-	 String[] testThing = new String[] { "-c", "conf/jhove.conf", "-k",
-	 "/home/goldsbjohn/govdocs","-o", "/home/goldsbjohn/test1.txt" };
-	 JhoveBench.main(testThing);
-	 }
-	 
-	 @Macrobenchmark
-	 public void jhoveR(){
-	 String[] testThing = new String[] { "-c", "conf/jhove.conf", "-r",
-	 "/home/goldsbjohn/govdocs","-o", "/home/goldsbjohn/test1.txt" };
-	 JhoveBench.main(testThing);
-	 }
+//	 @Macrobenchmark
+//	 public void jhoveS_Macro(){
+//	 String[] testThing = new String[] { "-c", "conf/jhove.conf", "-s",
+//	 "/home/goldsbjohn/govdocs","-o", "/home/goldsbjohn/test1.txt" };
+//	 JhoveBench.main(testThing);
+//	 }
+//	 @Benchmark
+//	 public void jhoveS_Micro(){
+//	 String[] testThing = new String[] { "-c", "conf/jhove.conf", "-s",
+//	 "/home/goldsbjohn/govdocs","-o", "/home/goldsbjohn/test1.txt" };
+//	 JhoveBench.main(testThing);
+//	 }
+//	 @Macrobenchmark
+//	 public void jhoveK(){
+//	 String[] testThing = new String[] { "-c", "conf/jhove.conf", "-k",
+//	 "/home/goldsbjohn/govdocs","-o", "/home/goldsbjohn/test1.txt" };
+//	 JhoveBench.main(testThing);
+//	 }
+//	 
+//	 @Macrobenchmark
+//	 public void jhoveR(){
+//	 String[] testThing = new String[] { "-c", "conf/jhove.conf", "-r",
+//	 "/home/goldsbjohn/govdocs","-o", "/home/goldsbjohn/test1.txt" };
+//	 JhoveBench.main(testThing);
+//	 }
 //	@Macrobenchmark
 //	public void droid() throws Exception {
 //		String[] testThing = new String[] { "-R", "-q", "-Nx", "csv", "-Nr",

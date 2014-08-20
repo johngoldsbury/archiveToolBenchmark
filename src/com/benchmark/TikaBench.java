@@ -15,7 +15,7 @@ import org.xml.sax.ContentHandler;
 import org.xml.sax.SAXException;
 
 public class TikaBench {
-	public void parseTika(String path) throws IOException, SAXException,
+	public static void parseTika(String path) throws IOException, SAXException,
 			TikaException {
 
 		AutoDetectParser parser = new AutoDetectParser();
@@ -25,7 +25,7 @@ public class TikaBench {
 
 		File file = new File(path);
 		File someFile = null;
-		System.out.println("Opening InputStream");
+//		System.out.println("Opening InputStream");
 		if (file.isDirectory()) {
 			// System.out.println("A directory");
 			Iterator<File> iter = FileUtils.iterateFiles(file, null, true);
@@ -42,13 +42,13 @@ public class TikaBench {
 //					System.out.print(someFile.getAbsolutePath() + " - ");
 					for (String str : metadata.names()) {
 						if (!str.contains("Unknown")) {
-//							System.out.print("## ");
-//							System.out.print(str + ": " + metadata.get(str)
-//									+ " ");
+							System.out.print("## ");
+							System.out.print(str + ": " + metadata.get(str)
+									+ " ");
 						}
 
 					}
-//					System.out.println();
+					System.out.println();
 
 					// System.out.println("Title: " + metadata.get("title")
 					// + " ## Description: " + metadata.get("description")
@@ -58,21 +58,20 @@ public class TikaBench {
 
 			}
 		} else {
-			System.out.println("Just one file");
+//			System.out.println("Just one file");
 			input = new FileInputStream(file);
 			parser.parse(input, handler, metadata);
-			for (String str : metadata.names()) {
-				if (!str.contains("Unknown")) {
-					System.out.print("## ");
-					System.out.print(str + ": " + metadata.get(str) + " ");
-				}
-
-			}
-			System.out.println();
+//			for (String str : metadata.names()) {
+//				if (!str.contains("Unknown")) {
+//					System.out.print("## ");
+//					System.out.print(str + ": " + metadata.get(str) + " ");
+//				}
+//			}
+//			System.out.println();
 		}
 		if (input != null) {
 			input.close();
-			System.out.println("Closed");
+//			System.out.println("Closed");
 		}
 	}
 

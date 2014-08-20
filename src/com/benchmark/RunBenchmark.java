@@ -35,15 +35,12 @@ public class RunBenchmark {
 		} finally {
 			// finally enable exit
 			control.enableSystemExit();
-			System.out.println("Hi");
+			
 		}
 
 	}
 
-	public static void runTools(String[] args) throws IOException,
-			SAXException, TikaException, CommandLineException,
-			ClassNotFoundException, NoSuchFieldException, SecurityException,
-			IllegalArgumentException, IllegalAccessException {
+	public static void runTools(String[] args) throws Exception {
 		String[] testThing = {};
 		String fileName = "";
 		TikaBench tika = new TikaBench();
@@ -57,9 +54,9 @@ public class RunBenchmark {
 		}
 
 		// DroidCommandLine.main(testThing);
-		// tika.parseTika(fileName);
+		 TikaBench.parseTika(fileName);
 
-		System.out.println("Done2");
+		
 
 		testThing = new String[] { "-R", "-Nx", "csv", "-Nr", fileName, "-Ns",
 				"/home/goldsbjohn/.droid6/signature_files/DROID_SignatureFile_V77.xml" };
@@ -98,6 +95,8 @@ public class RunBenchmark {
 		 testThing = new String[] { "-c", "conf/jhove.conf", "-s",
 		 fileName,"-o","/home/goldsbjohn/test2.txt" };
 		 JhoveBench.main(testThing);
+		 TikaCLIBench.parseTikaCLI(fileName);
+		 
 
 	}
 
