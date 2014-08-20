@@ -39,16 +39,16 @@ public class TikaBench {
 
 					input = new FileInputStream(someFile);
 					parser.parse(input, handler, metadata);
-					System.out.print(someFile.getAbsolutePath() + " - ");
+//					System.out.print(someFile.getAbsolutePath() + " - ");
 					for (String str : metadata.names()) {
 						if (!str.contains("Unknown")) {
-							System.out.print("## ");
-							System.out.print(str + ": " + metadata.get(str)
-									+ " ");
+//							System.out.print("## ");
+//							System.out.print(str + ": " + metadata.get(str)
+//									+ " ");
 						}
 
 					}
-					System.out.println();
+//					System.out.println();
 
 					// System.out.println("Title: " + metadata.get("title")
 					// + " ## Description: " + metadata.get("description")

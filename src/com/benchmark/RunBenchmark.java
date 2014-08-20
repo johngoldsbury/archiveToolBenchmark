@@ -58,38 +58,46 @@ public class RunBenchmark {
 
 		// DroidCommandLine.main(testThing);
 		// tika.parseTika(fileName);
-		JhoveBench a = new JhoveBench();
 
-		// a.main(testThing);
-		// System.out.println("Done1");
-		// a = new JhoveBench();
-		//
-		//
-		// a.main(testThing);
 		System.out.println("Done2");
 
 		testThing = new String[] { "-R", "-Nx", "csv", "-Nr", fileName, "-Ns",
 				"/home/goldsbjohn/.droid6/signature_files/DROID_SignatureFile_V77.xml" };
-		com.benchmark.DroidCommandLine.main(testThing);
-		Class clazz = Class.forName("java.lang.ApplicationShutdownHooks");
-		Field field = clazz.getDeclaredField("hooks");
-		field.setAccessible(true);
-		Object hooks = field.get(null);
-
-		IdentityHashMap map = (IdentityHashMap) hooks;
-		for (Iterator iterator = map.keySet().iterator(); iterator.hasNext();) {
-
-			Thread thread = (Thread) iterator.next();
-			Runtime.getRuntime().removeShutdownHook(thread);
-
-		}
-		Runtime.getRuntime().removeShutdownHook(Thread.currentThread());
-		testThing = new String[] { "-c", "conf/jhove.conf", "-s", fileName };
-		JhoveBench.main(testThing);
-		System.out.println(hooks);
-		// DroidCommandLine.main(testThing);
 		// com.benchmark.DroidCommandLine.main(testThing);
+		// Class clazz = Class.forName("java.lang.ApplicationShutdownHooks");
+		// Field field = clazz.getDeclaredField("hooks");
+		// field.setAccessible(true);
+		// Object hooks = field.get(null);
+		//
+		// IdentityHashMap map = (IdentityHashMap) hooks;
+		// for (Iterator iterator = map.keySet().iterator();
+		// iterator.hasNext();) {
+		//
+		// Thread thread = (Thread) iterator.next();
+		// Runtime.getRuntime().removeShutdownHook(thread);
+		//
+		// }
+		Runtime.getRuntime().removeShutdownHook(Thread.currentThread());
+
+		// testThing = new String[] { "-c", "conf/jhove.conf", "-s",
+		// fileName,"-o","/home/goldsbjohn/test.txt" };
+		// JhoveBench.main(testThing);
+
+//		testThing = new String[] {
+//				"-R",
+//				"-Nr",
+//				"/home/goldsbjohn/govdocs",
+//				"-Ns",
+//				"/home/goldsbjohn/.droid6/signature_files/DROID_SignatureFile_V77.xml"};
+		// testThing = new String[]
+		// {"-R","-a","/home/goldsbjohn/govdocs/","-p","/home/goldsbjohn/result1.droid"};//"Result",
+		// "-t", "DROID Report XML", "-e",
+		// "/home/goldsbjohn/govdocs/result1Report.xml"};
+//		com.benchmark.DroidCommandLine.main(testThing);
 		System.out.println("Done");
+		 testThing = new String[] { "-c", "conf/jhove.conf", "-s",
+		 fileName,"-o","/home/goldsbjohn/test2.txt" };
+		 JhoveBench.main(testThing);
 
 	}
 
