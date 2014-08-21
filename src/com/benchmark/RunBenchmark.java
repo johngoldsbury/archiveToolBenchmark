@@ -76,22 +76,22 @@ public class RunBenchmark {
 		// fileName,"-o","/home/goldsbjohn/test.txt" };
 //		 JhoveCLI.main(testThing);
 
-//		testThing = new String[] {
-//				"-R",
-//				"-Nr",
-//				"/home/goldsbjohn/govdocs",
-//				"-Ns",
-//				"/home/goldsbjohn/.droid6/signature_files/DROID_SignatureFile_V77.xml"};
-		// testThing = new String[]
-		// {"-R","-a","/home/goldsbjohn/govdocs/","-p","/home/goldsbjohn/result1.droid"};//"Result",
-		// "-t", "DROID Report XML", "-e",
-		// "/home/goldsbjohn/govdocs/result1Report.xml"};
-//		DroidCLI.main(testThing);
-		System.out.println("Done");
-		 testThing = new String[] { "-c", "conf/jhove.conf", "-s",
-		 fileName,"-o","/home/goldsbjohn/test2.txt" };
-		 JhoveCLI.main(testThing);
-		 TikaCLIBench.parseTikaCLI(fileName);
+		testThing = new String[] {
+				"-R",
+				"-Nr",
+				"/home/goldsbjohn/govdocs",
+				"-Ns",
+				"/home/goldsbjohn/.droid6/signature_files/DROID_SignatureFile_V77.xml"};
+//		 testThing = new String[]
+//		 {"-R","-a","/home/goldsbjohn/govdocs/","-p","/home/goldsbjohn/result1.droid"};//"Result",
+//		 
+		DroidCLI.main(testThing);
+//		System.out.println("Done");
+//		 testThing = new String[] { "-c", "conf/jhove.conf", "-s",
+//		 fileName,"-o","/home/goldsbjohn/test2.txt" };
+//		 JhoveCLI.main(testThing);
+//		 TikaCLIBench.parseTikaCLI(fileName);
+		DroidCLI.main(testThing);
 		 
 
 	}

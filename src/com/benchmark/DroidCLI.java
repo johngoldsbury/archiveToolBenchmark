@@ -164,8 +164,8 @@ package com.benchmark;
 
 	            run();
 	            
-	            out.close();
-	            context.close();
+//	            out.close();
+//	            context.close();
 
 	        } catch (CommandExecutionException ceex) {
 	            returnCode = 1;
