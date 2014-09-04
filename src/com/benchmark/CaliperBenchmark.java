@@ -6,8 +6,11 @@ import uk.gov.nationalarchives.droid.command.action.CommandLineException;
 import com.google.caliper.BeforeExperiment;
 import com.google.caliper.Benchmark;
 import com.google.caliper.api.Macrobenchmark;
-
-public final class CaliperBenchmarkTest {
+/**
+ * Runs all annotated benchmarks using the Google Caliper runner
+ * 
+ */
+public final class CaliperBenchmark {
 
 	// @Macrobenchmark
 	// public void tika() throws Exception {

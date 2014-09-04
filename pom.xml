@@ -33,7 +33,8 @@
 							</descriptorRefs>
 							<archive>
 								<manifest>
-									<mainClass>com.google.caliper.runner.CaliperMain</mainClass>
+									<!-- <mainClass>com.google.caliper.runner.CaliperMain</mainClass> -->
+									<mainClass>com.benchmark.RunCollectionTools</mainClass>
 								</manifest>
 							</archive>
 						</configuration>

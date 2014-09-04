@@ -9,6 +9,13 @@ import org.apache.commons.io.FileUtils;
 
 public class TikaCLIBench {
 
+	/**
+	 * Execute TikaCLIBench which iterates over files in a folder or a single file in metadata extraction (-m) mode
+	 * @param path
+	 * @throws Exception
+	 * 
+ 	 * 
+	 */
 	public static void parseTikaCLI(String path) throws Exception {
 
 		InputStream input = null;
