@@ -24,16 +24,17 @@ public class RunBenchmark {
 	public static void main(String[] args) throws Exception {
 
 		// CaliperMain.main(CaliperBenchmarkTest.class, args);
-		CodeControl control = new CodeControl();
-		try {
-			control.disableSystemExit();
-			runTools(args);
-
-		} finally {
-			// finally enable exit
-			control.enableSystemExit();
-			
-		}
+//		CodeControl control = new CodeControl();
+//		try {
+//			control.disableSystemExit();
+//			runTools(args);
+//
+//		} finally {
+//			// finally enable exit
+//			control.enableSystemExit();
+//			
+//		}
+		runTools(args);
 
 	}
 
@@ -43,7 +44,7 @@ public class RunBenchmark {
 		
 		if (args.length > 0) {
 			fileName = new File(args[0]).getAbsolutePath();
-			System.out.println(fileName);
+//			System.out.println(fileName);
 		} else {
 			System.out.println("Please enter a valid path");
 			System.exit(0);
@@ -84,7 +85,7 @@ public class RunBenchmark {
 				"/home/goldsbjohn/.droid6/signature_files/DROID_SignatureFile_V77.xml"};
 //		 testThing = new String[]
 //		 {"-R","-a","/home/goldsbjohn/govdocs/","-p","/home/goldsbjohn/result1.droid"};//"Result",
-//		 
+		DroidCLI.main(new String[] {"-d"}); 
 		DroidCLI.main(testThing);
 //		System.out.println("Done");
 //		 testThing = new String[] { "-c", "conf/jhove.conf", "-s",
