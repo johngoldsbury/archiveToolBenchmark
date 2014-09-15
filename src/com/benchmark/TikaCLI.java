@@ -94,7 +94,8 @@ import org.xml.sax.helpers.DefaultHandler;
 import org.apache.tika.io.FilenameUtils;
 
 /**
- * Simple command line interface for Apache Tika.
+ * Simple command line interface for Apache Tika. ##Official Tika Code##
+ * 
  */
 public class TikaCLI {
     private File extractDir = new File(".");

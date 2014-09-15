@@ -23,7 +23,12 @@ package com.benchmark;
 import edu.harvard.hul.ois.jhove.*;
 //import java.io.*;
 import java.util.*;
-
+/**
+ * 
+ * Copyright 2004-2007 by the President and Fellows of Harvard College. 
+ * Unmodified
+ *
+ */
 public class JhoveCLI {
 	/******************************************************************
 	 * PRIVATE CLASS FIELDS.

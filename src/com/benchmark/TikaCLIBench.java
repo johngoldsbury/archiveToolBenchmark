@@ -10,11 +10,15 @@ import org.apache.commons.io.FileUtils;
 public class TikaCLIBench {
 
 	/**
-	 * Execute TikaCLIBench which iterates over files in a folder or a single file in metadata extraction (-m) mode
-	 * @param path
-	 * @throws Exception
+	 * Execute TikaCLIBench which iterates over files in a folder or a single
+	 * file in metadata extraction (-m) mode
 	 * 
- 	 * 
+	 * @param path
+	 * @author John Goldsbury
+	 * @throws Exception
+	 * @see TikaCli
+	 * 
+	 * 
 	 */
 	public static void parseTikaCLI(String path) throws Exception {
 
@@ -40,7 +44,7 @@ public class TikaCLIBench {
 		} else {
 
 			TikaCLI.main(new String[] { "-m", "file://" + someFile });
-			
+
 		}
 		if (input != null) {
 			input.close();

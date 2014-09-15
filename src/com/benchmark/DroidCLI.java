@@ -24,7 +24,7 @@ package com.benchmark;
 	import uk.gov.nationalarchives.droid.core.interfaces.config.RuntimeConfig;
 
 	/**
-	 * The DROID command line user-interface.
+	 * The DROID command line user-interface. Minor Modifications by John Goldsbury
 	 * 
 	 * @author rflitcroft, Alok Kumar Dash
 	 * 

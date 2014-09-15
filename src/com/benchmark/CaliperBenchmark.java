@@ -1,5 +1,10 @@
 package com.benchmark;
 
+import java.io.IOException;
+
+import org.apache.tika.exception.TikaException;
+import org.xml.sax.SAXException;
+
 import uk.gov.nationalarchives.droid.command.DroidCommandLine;
 import uk.gov.nationalarchives.droid.command.action.CommandLineException;
 
@@ -7,10 +12,11 @@ import com.google.caliper.BeforeExperiment;
 import com.google.caliper.Benchmark;
 import com.google.caliper.Param;
 import com.google.caliper.api.Macrobenchmark;
+import com.google.caliper.api.VmOptions;
 
 /**
  * Runs all annotated benchmarks using the Google Caliper runner
- * 
+ * @code mvn exec:java -Dexec.mainClass=com.google.caliper.runner.CaliperMain -Dexec.args="com.benchmark.CaliperBenchmark -Dpath='' -Dsig='' -Dresult='' "
  */
 public final class CaliperBenchmark {
 
@@ -25,17 +31,36 @@ public final class CaliperBenchmark {
 	// add -Dname=/pathname/path/file.ext etc
 	// e.g for maven: ...
 	// -Dexec.args="com.benchmark.CaliperBenchmark -Dpath=/home/goldsbjohn/govdocs"
-
+	
+	
+	
+	
 	@Macrobenchmark
 	public void tika_CLI() throws Exception {
+		
 		TikaCLIBench.parseTikaCLI(path);
 	}
 
 	@Macrobenchmark
-	public void tika() throws Exception {
+	public void tikaMetaDetect() throws Exception {
 
-		TikaBench.parseTika(path);
+		TikaBench.parseTika(path,true);
 
+	}
+	@Macrobenchmark
+	public void tikaNoMetaDetect() throws Exception {
+
+		TikaBench.parseTika(path,false);
+
+	}
+	
+	@Macrobenchmark
+	public void tikaBody() throws IOException, SAXException, TikaException{
+		TikaBench.parseTikaPrintBody(path, true);
+	}
+	@Macrobenchmark
+	public void tikaBodyNoMetaDetect() throws IOException, SAXException, TikaException{
+		TikaBench.parseTikaPrintBody(path, false);
 	}
 
 //	@Macrobenchmark

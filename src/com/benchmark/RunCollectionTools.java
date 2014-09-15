@@ -2,11 +2,10 @@ package com.benchmark;
 
 import java.io.File;
 
-import org.xhtmlrenderer.css.style.Length;
 
 /**
  * Runs Droid, Jhove and Tika from their commandline interfaces
- * 
+ * @author John Goldsbury
  */
 public class RunCollectionTools {
 
@@ -17,6 +16,7 @@ public class RunCollectionTools {
 	/**
 	 * Runs Droid, Jhove and Tika from their commandline interfaces Takes one
 	 * argument: A path to a file or folder to be passed to each tool
+	 * @param args
 	 */
 	public static void runTools(String[] args) throws Exception {
 		String[] commandlineArgs = {};
@@ -40,7 +40,6 @@ public class RunCollectionTools {
 		if (args.length == 3) {
 			resultPath = new File(args[2]).getAbsolutePath();
 		}
-		
 
 		// Set Droid command-line arguments including directory/file to process
 		// and signature file (for -Nr mode)
@@ -58,6 +57,7 @@ public class RunCollectionTools {
 		// Execute TikaCLIBench which iterates over files in a folder or a
 		// single file in metadata extraction (-m) mode
 		TikaCLIBench.parseTikaCLI(filePath);
+//		TikaBench.parseTika(filePath,true);
 
 	}
 
