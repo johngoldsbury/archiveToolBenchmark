@@ -58,6 +58,11 @@
 			<id>apache</id>
 			<url>http://repository.apache.org</url>
 		</repository>
+		<repository>
+			<id>apache-snapshots</id>
+			<url>https://repository.apache.org/content/groups/snapshots/</url>
+		</repository>
+
 	</repositories>
 	<dependencies>
 
