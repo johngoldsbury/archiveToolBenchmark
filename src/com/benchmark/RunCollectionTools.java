@@ -1,6 +1,7 @@
 package com.benchmark;
 
 import java.io.File;
+import uk.gov.nationalarchives.droid.command.action.CommandLineException;
 
 
 /**
@@ -9,7 +10,7 @@ import java.io.File;
  */
 public class RunCollectionTools {
 
-	public static void main(String[] args) throws Exception {
+	public static void main(String[] args) {
 		runTools(args);
 	}
 
@@ -18,7 +19,7 @@ public class RunCollectionTools {
 	 * argument: A path to a file or folder to be passed to each tool
 	 * @param args
 	 */
-	public static void runTools(String[] args) throws Exception {
+	public static void runTools(String[] args){
 		String[] commandlineArgs = {};
 		String filePath = "";
 		
@@ -44,20 +45,31 @@ public class RunCollectionTools {
 		// Set Droid command-line arguments including directory/file to process
 		// and signature file (for -Nr mode)
 		commandlineArgs = new String[] { "-R", "-Nr", filePath, "-Ns",
-				droidSignaturePath };
+		droidSignaturePath };
 		// Execute Droid via commandline interface (From within Java)
-		DroidCLI.main(commandlineArgs);
-
+		System.out.println("####### Beginning DROID Run #######");
+		try{
+			DroidCLI.main(commandlineArgs);				
+		}catch (CommandLineException e) {
+				// TODO Auto-generated catch block
+			e.printStackTrace();
+		} 
+		System.out.println("####### DROID run complete #######");
 		// Set Jhove commandline arguments
 		commandlineArgs = new String[] { "-c", "conf/jhove.conf", "-s",
-				filePath, "-o", resultPath,  };
+		filePath, "-o", resultPath,  };
 		// Execute Jhove via commandline interface (From within Java)
+		System.out.println("####### Beginning Jhove Run #######");
 		JhoveCLI.main(commandlineArgs);
+		System.out.println("####### Jhove run complete, results at "+filePath+" #######");
 
 		// Execute TikaCLIBench which iterates over files in a folder or a
 		// single file in metadata extraction (-m) mode
+		System.out.println("####### Beginning Tika run #######");
 		TikaCLIBench.parseTikaCLI(filePath);
-//		TikaBench.parseTika(filePath,true);
+		System.out.println("####### Tika run complete #######");
+		System.out.println("####### DROID cleanup phase begins (automated) #######");
+
 
 	}
 

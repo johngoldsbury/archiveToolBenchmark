@@ -36,77 +36,109 @@ public final class CaliperBenchmark {
 	
 	
 	@Macrobenchmark
-	public void tika_CLI() throws Exception {
-		
-		TikaCLIBench.parseTikaCLI(path);
+	public void tika_CLI() {
+		try{
+			TikaCLIBench.parseTikaCLI(path);
+		}catch (Exception e) {
+				// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 
 	@Macrobenchmark
-	public void tikaMetaDetect() throws Exception {
-
-		TikaBench.parseTika(path,true);
+	public void tikaMetaDetect() {
+		try{
+			TikaBench.parseTika(path,true);
+		}catch (Exception e) {
+				// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 
 	}
 	@Macrobenchmark
-	public void tikaNoMetaDetect() throws Exception {
-
-		TikaBench.parseTika(path,false);
-
+	public void tikaNoMetaDetect() {
+		try{
+			TikaBench.parseTika(path,false);
+		}catch (Exception e) {
+				// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 	
 	@Macrobenchmark
-	public void tikaBody() throws IOException, SAXException, TikaException{
-		TikaBench.parseTikaPrintBody(path, true);
+	public void tikaBody() {
+		try{
+			TikaBench.parseTikaPrintBody(path, true);
+		}catch (Exception e) {
+				// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 	@Macrobenchmark
-	public void tikaBodyNoMetaDetect() throws IOException, SAXException, TikaException{
-		TikaBench.parseTikaPrintBody(path, false);
+	public void tikaBodyNoMetaDetect() {
+		try{
+			TikaBench.parseTikaPrintBody(path, false);
+		}catch (Exception e) {
+				// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 
-//	@Macrobenchmark
-//	public void jhoveS_Macro() {
-//		String[] testThing = new String[] { "-c", "conf/jhove.conf", "-s",
-//				path, "-o", result };
-//		JhoveCLI.main(testThing);
-//	}
+	@Macrobenchmark
+	public void jhoveS_Macro() {
+		try{
+			JhoveCLI.main(new String[] { "-c", "conf/jhove.conf", "-s",	path, "-o", result});
+		}catch (Exception e) {
+				// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
 
-//	@Macrobenchmark
-//	public void jhoveK() {
-//		String[] testThing = new String[] { "-c", "conf/jhove.conf", "-k",
-//				path, "-o", result };
-//		JhoveCLI.main(testThing);
-//	}
+	@Macrobenchmark
+	public void jhoveK() {
+		try{
+			JhoveCLI.main(new String[] { "-c", "conf/jhove.conf", "-k",
+				path, "-o", result });
+		}catch (Exception e) {
+				// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+	}
 
 	
-//	@Macrobenchmark
-//	public void jhoveR() {
-//		String[] testThing = new String[] { "-c", "conf/jhove.conf", "-r",
-//				path, "-o", result };
-//		JhoveCLI.main(testThing);
-//	}
+	@Macrobenchmark
+	public void jhoveR() {
+		try{
+			JhoveCLI.main(new String[] { "-c", "conf/jhove.conf", "-r",
+				path, "-o", result });
+		}catch (Exception e) {
+				// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 
-	// @BeforeExperiment
-	// public void downloadSig() throws CommandLineException {
-	// DroidCLI.main(new String[] { "-d" });
-	// }
-	// @Benchmark
-	// public void jhoveS_Micro(){
-	// String[] testThing = new String[] { "-c", "conf/jhove.conf", "-s",
-	// path,"-o", result };
-	// JhoveCLI.main(testThing);
-	// }
+	}
+
 	// @Benchmark
 	// public void signatureDownload() throws CommandLineException {
-	// DroidCLI.main(new String[] { "-d" });
-	//
+	// 	try{
+	// 		DroidCLI.main(new String[] { "-d" });
+	// 	}catch (Exception e) {
+	// 			// TODO Auto-generated catch block
+	// 		e.printStackTrace();
+	// 	}
 	// }
 
-	// @Macrobenchmark
-	// public void droid() throws Exception {
-	// String[] testThing = new String[] { "-R", "-Nr",
-	// path, "-Ns",
-	// sig };
-	// DroidCLI.main(testThing);
-	// }
+	@Macrobenchmark
+	public void droid() throws Exception {
+		try{
+			DroidCLI.main(new String[] { "-R", "-Nr",
+				path, "-Ns",
+				sig });
+		}catch (Exception e) {
+				// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
 
 }
